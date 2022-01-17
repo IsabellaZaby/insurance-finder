@@ -49,7 +49,7 @@ const StepTwo: FC = () => {
                         </div>
                     </div>
                     <div className={styles.cell}><Star/><Star/><Star/><StarOutline/><StarOutline/></div>
-                    <div className={`${styles.cell} ${styles.price}`}>ab 70,00 €</div>
+                    <div className={`${styles.cell} ${styles.price}`}>ab  <br/>70,00 €</div>
                 </a>
                 <div className={styles.buttonrow}>
                     <div className={styles.cell}/>
@@ -62,12 +62,12 @@ const StepTwo: FC = () => {
                     <div className={styles.cell}>
                         <div className={styles.bullet}>
                             <span className={styles.bullet}>Versicherungssumme € 10 Mio.</span>
-                            <span className={styles.bullet}>Kein Freischaden pro Jar</span>
+                            <span className={styles.bullet}>Kein Freischaden pro Jahr</span>
                             <span className={styles.bullet}>Laufzeit Rechtsschutz 8 Jahre</span>
                         </div>
                     </div>
                     <div className={styles.cell}><Star/><Star/><Star/><Star/><StarOutline/></div>
-                    <div className={`${styles.cell} ${styles.price}`}>ab 80,00 €</div>
+                    <div className={`${styles.cell} ${styles.price}`}>ab  <br/>80,00 €</div>
                 </a>
                 <div className={styles.buttonrow}>
                     <div className={styles.cell}/>
@@ -85,7 +85,7 @@ const StepTwo: FC = () => {
                         </div>
                     </div>
                     <div className={styles.cell}><Star/><Star/><StarOutline/><StarOutline/><StarOutline/></div>
-                    <div className={`${styles.cell} ${styles.price}`}>ab 100,00 €</div>
+                    <div className={`${styles.cell} ${styles.price}`}>ab  <br/>100,00 €</div>
                 </a>
                 <div className={styles.buttonrow}>
                     <div className={styles.cell}/>
@@ -103,7 +103,7 @@ const StepTwo: FC = () => {
                         </div>
                     </div>
                     <div className={styles.cell}><Star/><Star/><Star/><Star/><StarOutline/></div>
-                    <div className={`${styles.cell} ${styles.price}`}>ab 60,00 €</div>
+                    <div className={`${styles.cell} ${styles.price}`}>ab  <br/>60,00 €</div>
                 </a>
                 <div className={styles.buttonrow}>
                     <div className={styles.cell}/>
@@ -121,7 +121,7 @@ const StepTwo: FC = () => {
                         </div>
                     </div>
                     <div className={styles.cell}><Star/><Star/><Star/><Star/><StarOutline/></div>
-                    <div className={`${styles.cell} ${styles.price}`}>ab 60,00 €</div>
+                    <div className={`${styles.cell} ${styles.price}`}>ab  <br/>60,00 €</div>
                 </a>
                 <div className={styles.buttonrow}>
                     <div className={styles.cell}/>
@@ -139,7 +139,7 @@ const StepTwo: FC = () => {
                         </div>
                     </div>
                     <div className={styles.cell}><Star/><Star/><Star/><Star/><Star/></div>
-                    <div className={`${styles.cell} ${styles.price}`}>ab 80,00 €</div>
+                    <div className={`${styles.cell} ${styles.price}`}>ab  <br/>80,00 €</div>
                 </a>
                 <div className={styles.buttonrow}>
                     <div className={styles.cell}/>
@@ -157,7 +157,7 @@ const StepTwo: FC = () => {
                         </div>
                     </div>
                     <div className={styles.cell}><Star/><Star/><StarOutline/><StarOutline/><StarOutline/></div>
-                    <div className={`${styles.cell} ${styles.price}`}>ab 90,00 €</div>
+                    <div className={`${styles.cell} ${styles.price}`}>ab  <br/>90,00 €</div>
                 </a>
                 <div className={styles.buttonrow}>
                     <div className={styles.cell}/>
@@ -175,7 +175,7 @@ const StepTwo: FC = () => {
                         </div>
                     </div>
                     <div className={styles.cell}><Star/><Star/><Star/><StarOutline/><StarOutline/></div>
-                    <div className={`${styles.cell} ${styles.price}`}>ab 70,00 €</div>
+                    <div className={`${styles.cell} ${styles.price}`}>ab  <br/>70,00 €</div>
                 </a>
                 <div className={styles.buttonrow}>
                     <div className={styles.cell}/>
@@ -193,7 +193,7 @@ const StepTwo: FC = () => {
                         </div>
                     </div>
                     <div className={styles.cell}><Star/><Star/><Star/><Star/><Star/></div>
-                    <div className={`${styles.cell} ${styles.price}`}>ab 100,00 €</div>
+                    <div className={`${styles.cell} ${styles.price}`}>ab  <br/>100,00 €</div>
                 </a>
                 <div className={styles.buttonrow}>
                     <div className={styles.cell}/>
@@ -211,7 +211,7 @@ const StepTwo: FC = () => {
                         </div>
                     </div>
                     <div className={styles.cell}><Star/><StarOutline/><StarOutline/><StarOutline/><StarOutline/></div>
-                    <div className={`${styles.cell} ${styles.price}`}>ab 100,00 €</div>
+                    <div className={`${styles.cell} ${styles.price}`}>ab  <br/>100,00 €</div>
                 </a>
                 <div className={styles.buttonrow}>
                     <div className={styles.cell}/>

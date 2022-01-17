@@ -91,7 +91,7 @@ const StepOne: FC = () => {
 
     return (
         <div className={styles.wrapper}>
-            <h1>Versicherungsrechner</h1>
+            <h1>Prämienrechner</h1>
             <div className={styles.card}>
                 <FormControl sx={{marginRight: '10px', maxWidth: '100%', width: '40%'}}>
                     <InputLabel id="demo-simple-select-label">Marke</InputLabel>
