@@ -36,3 +36,29 @@
         bottom: 25px;
     }
 }
+
+li {
+    margin-bottom: 5px;
+}
+
+
+.headerwrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.headerleft {
+    text-align: left;
+}
+
+.headerright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.textwrapper {
+    text-align: left;
+}

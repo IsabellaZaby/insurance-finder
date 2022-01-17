@@ -1,13 +1,15 @@
-import React from "react";
+import React, {useState} from "react";
 import "./App.css";
 import DashboardAppBar from "./components/DashboardAppBar";
 import StepOne from "./components/StepOne";
 import {Outlet, useLocation} from "react-router-dom";
 import {createTheme, ThemeProvider} from "@mui/material";
+import DrawerMenu from "./components/DrawerMenu";
 
 function App() {
     const location = useLocation();
     const className = location?.pathname === '/stepFive' ? "content five" : "content";
+    const [open, setOpen] = useState(false);
 
     const theme = createTheme({
         palette: {
@@ -25,11 +27,14 @@ function App() {
             },
         },
     });
+
+    const handleDrawerOpen = () => setOpen(!open);
     return (
         <ThemeProvider theme={theme}>
             <div className="App">
                 <header className="App-header">
-                    <DashboardAppBar/>
+                    <DrawerMenu open={open} setOpen={setOpen}/>
+                    <DashboardAppBar handleDrawerOpen={handleDrawerOpen}/>
                 </header>
                 <div className={className}>
                     {location.pathname === "/" && <StepOne/>}

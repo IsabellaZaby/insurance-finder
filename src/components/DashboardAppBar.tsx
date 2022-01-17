@@ -6,7 +6,7 @@ interface IDashboardAppBar {
     handleDrawerOpen: () => void;
 }
 
-const DashboardAppBar: FC = () => {
+const DashboardAppBar: FC<IDashboardAppBar> = ({handleDrawerOpen}) => {
     return (
         <AppBar position="fixed">
             <Toolbar>
@@ -19,6 +19,7 @@ const DashboardAppBar: FC = () => {
                     color="inherit"
                     aria-label="menu"
                     sx={{mr: 2, padding: 0, margin: 0}}
+                    onClick={handleDrawerOpen}
                 >
                     <MenuIcon/>
                 </IconButton>
