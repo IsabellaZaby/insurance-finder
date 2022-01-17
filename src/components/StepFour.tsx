@@ -115,7 +115,7 @@ const StepFour: FC = () => {
                         sx={errors && !checkbox ? {color: '#d32f2f'} : {}}
                     />}
                     label={<span className={errors && !checkbox ? styles.error
-                        : ''}>Ich stimme den <a onClick={(e) => e.stopPropagation()} href="/datenschutz" target="_blank">Datenschutzrichtlinien</a> zu. </span>}/>
+                        : ''}>Ich stimme den <Link onClick={(e) => e.stopPropagation()} to="/datenschutz" target="_blank" className={styles.privacy}>Datenschutzrichtlinien</Link> zu. </span>}/>
             </FormControl>
             <Button
                 size={"large"}

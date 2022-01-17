@@ -42,6 +42,14 @@ const DrawerMenu: FC<DrawerMenu> = ({open, setOpen}) => {
                         <ListItemText primary="Datenschutz"/>
                     </ListItem>
                 </Link>
+                <Link to="/impressum" onClick={() => setOpen(false)}>
+                    <ListItem selected={pathname === '/impressum'}>
+                        <ListItemIcon>
+                            <Policy/>
+                        </ListItemIcon>
+                        <ListItemText primary="Impressum"/>
+                    </ListItem>
+                </Link>
             </List>
             <Divider/>
         </Drawer>

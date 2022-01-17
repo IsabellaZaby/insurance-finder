@@ -20,10 +20,6 @@
     margin-right: 5px;
 }
 
-.back a:hover {
-    font-weight: bold;
-}
-
 .radiobuttons {
     display: flex;
     flex-flow: row wrap !important;
@@ -50,4 +46,9 @@
 .error {
     color: #d32f2f;
 
+}
+
+.privacy {
+    font-weight: bold;
+    color: #002884 !important;
 }

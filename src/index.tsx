@@ -3,12 +3,13 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import {HashRouter as Router, Route, Routes} from "react-router-dom";
 import StepTwo from "./components/StepTwo";
 import StepThree from "./components/StepThree";
 import StepFour from "./components/StepFour";
 import StepFive from "./components/StepFive";
 import Privacy from "./components/Privacy";
+import Impressum from "./components/Impressum";
 
 ReactDOM.render(
     <React.StrictMode>
@@ -20,6 +21,7 @@ ReactDOM.render(
                     <Route path="stepFour" element={<StepFour/>}/>
                     <Route path="stepFive" element={<StepFive/>}/>
                     <Route path="datenschutz" element={<Privacy/>}/>
+                    <Route path="impressum" element={<Impressum/>}/>
                 </Route>
             </Routes>
         </Router>
