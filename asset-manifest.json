@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/insurance-finder/static/css/main.376f8e89.css",
-    "main.js": "/insurance-finder/static/js/main.edc23984.js",
+    "main.js": "/insurance-finder/static/js/main.065b809b.js",
     "static/js/787.edd59a96.chunk.js": "/insurance-finder/static/js/787.edd59a96.chunk.js",
     "index.html": "/insurance-finder/index.html",
     "main.376f8e89.css.map": "/insurance-finder/static/css/main.376f8e89.css.map",
-    "main.edc23984.js.map": "/insurance-finder/static/js/main.edc23984.js.map",
+    "main.065b809b.js.map": "/insurance-finder/static/js/main.065b809b.js.map",
     "787.edd59a96.chunk.js.map": "/insurance-finder/static/js/787.edd59a96.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.376f8e89.css",
-    "static/js/main.edc23984.js"
+    "static/js/main.065b809b.js"
   ]
 }
