@@ -1,16 +1,15 @@
 import {ChangeEvent, FC, useState} from "react";
 import {ArrowBack} from "@mui/icons-material";
 import styles from './StepFour.module.css';
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {Button, Checkbox, FormControl, FormControlLabel, FormHelperText, Radio, RadioGroup, TextField} from "@mui/material";
+import CommonConstants from "./CommonConstants";
 
-//TODO fix checkbox
 const StepFour: FC = () => {
 
     const navigate = useNavigate();
     const [errors, setErrors] = useState(false);
     const [mailValidationError, setMailValidationError] = useState(false);
-    const [phoneValidationError, setPhoneValidationError] = useState(false);
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [phone, setPhone] = useState('');
@@ -24,14 +23,8 @@ const StepFour: FC = () => {
     const handleEmailChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setMail(event.target.value);
         const regex = new RegExp(
-            "/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;");
+            "[a-zA-Z0-9_\.\+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-\\.]+");
         setMailValidationError(!regex.test(event.target.value));
-    };
-
-    const handlePhoneChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setPhone(event.target.value);
-        const regex = new RegExp("^[0-9]*");
-        setPhoneValidationError(!regex.test(event.target.value));
     };
 
     const onButtonClick = () => {
@@ -44,7 +37,7 @@ const StepFour: FC = () => {
 
     return (
         <div className={styles.wrapper}>
-            <a className={styles.back} onClick={() => navigate("/")}><ArrowBack/> Zurück</a>
+            <Link className={styles.back} to="/stepThree"><ArrowBack/> Zurück</Link>
             <FormControl component="fieldset">
                 <RadioGroup
                     aria-label="geschlecht"
@@ -66,8 +59,10 @@ const StepFour: FC = () => {
                     onChange={e => handleChange(e, setFirstName)}
                     value={firstName}
                     error={errors && firstName === ''}
+                    required={true}
+                    placeholder="Erika"
                 />
-                {errors && firstName === '' && <FormHelperText>Dieses Feld ist Pflicht.</FormHelperText>}
+                {errors && firstName === '' && <FormHelperText>{CommonConstants.REQUIRED}</FormHelperText>}
             </div>
             <div className={styles.formelement}>
                 <TextField
@@ -78,11 +73,13 @@ const StepFour: FC = () => {
                     onChange={e => handleChange(e, setLastName)}
                     value={lastName}
                     error={errors && lastName === ''}
+                    required={true}
+                    placeholder="Musterperson"
                 />
-                {errors && lastName === '' && <FormHelperText>Dieses Feld ist Pflicht.</FormHelperText>}
+                {errors && lastName === '' && <FormHelperText>{CommonConstants.REQUIRED}</FormHelperText>}
             </div>
 
-            <FormControl fullWidth>
+            <FormControl fullWidth required={true}>
                 <TextField
                     className={styles.formelement}
                     id="outlined-basic"
@@ -91,6 +88,7 @@ const StepFour: FC = () => {
                     onChange={handleEmailChange}
                     value={mail}
                     error={errors && (mail === '' && phone === '') || mailValidationError}
+                    placeholder="erika.musterperson@email.at"
                 />
                 {mailValidationError && <FormHelperText>Keine gültige Email-Adresse.</FormHelperText>}
                 <h4>UND / ODER</h4>
@@ -99,26 +97,26 @@ const StepFour: FC = () => {
                     id="outlined-basic"
                     label="Telefonnummer"
                     variant="outlined"
-                    onChange={handlePhoneChange}
+                    onChange={(e) => handleChange(e, setPhone)}
                     value={phone}
-                    error={errors && (mail === '' && phone === '') || phoneValidationError}
+                    type={"number"}
+                    error={errors && (mail === '' && phone === '')}
+                    placeholder="0123456789"
                 />
-                {errors && (mail === '' && phone === '') && <FormHelperText>Eines dieser Felder ist Pflicht.</FormHelperText>}
-                {phoneValidationError && <FormHelperText>Die Telefonnummer darf nur aus Zahlen bestehen.</FormHelperText>}
+                {errors && (mail === '' && phone === '') && <FormHelperText>Eines dieser Felder ist ein Pflichtfeld.</FormHelperText>}
             </FormControl>
             <p>Wir kontaktieren Sie gerne so schnell wie möglich mit mehr Informationen über ihre gewählte Versicherung.</p>
-            <div>
-                <Checkbox
-                    value={checkbox}
-                    aria-label={"datenschutz"}
-                    onChange={(e) => setCheckBox(!checkbox)}
-                    required={true}
-                    sx={{color: 'red'}}
-                />
-                Ich stimme den <a>Datenschutzrichtlinien</a> zu.
-                {errors && !checkbox && <FormHelperText className={styles.error}>Sie müssen den Datenschutzrichtlinien
-                    zustimmen.</FormHelperText>}
-            </div>
+            <FormControl error={errors && !checkbox}>
+                <FormControlLabel
+                    control={<Checkbox
+                        value={checkbox}
+                        aria-label={"Datenschutz-Checkbox"}
+                        onChange={(e) => setCheckBox(!checkbox)}
+                        sx={errors && !checkbox ? {color: '#d32f2f'} : {}}
+                    />}
+                    label={<span className={errors && !checkbox ? styles.error
+                        : ''}>Ich stimme den <a onClick={(e) => e.stopPropagation()} href="/datenschutz" target="_blank">Datenschutzrichtlinien</a> zu. </span>}/>
+            </FormControl>
             <Button
                 size={"large"}
                 className={styles.button}

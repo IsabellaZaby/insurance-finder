@@ -10,19 +10,24 @@
     display: table;
     flex-flow: column nowrap;
     border: 1px solid black;
-    /*width: 90%;*/
+    width: 100%;
     border-collapse: collapse;
     overflow-y: scroll;
 }
 
 .row {
     display: table-row;
-    /*flex-flow: row nowrap;*/
     justify-content: space-around;
+}
+
+.row:hover {
+    border: 2px solid black;
 }
 
 .hdrow {
     font-weight: bold;
+    display: table-row;
+    justify-content: space-around;
 }
 
 .cell {
@@ -31,8 +36,14 @@
     border: 1px solid black;
     text-align: center;
     vertical-align: middle;
-    font-size: 12px;
 }
+
+@media screen and (max-width: 410px) {
+    .cell {
+        font-size: 12px;
+    }
+}
+
 
 .header {
     align-self: start;
@@ -60,4 +71,9 @@
 
 a:hover {
     font-weight: bold;
+}
+
+.bullet {
+    display: flex;
+    flex-flow: column nowrap;
 }

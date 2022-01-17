@@ -29,6 +29,9 @@
   display: flex;
   justify-content: center;
 }
+.content.five {
+  height: 85vh;
+}
 
 .App-link {
   color: #61dafb;

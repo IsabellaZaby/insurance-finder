@@ -1,11 +1,25 @@
+.wrapper {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 20px;
+    align-items: center;
+}
+
 .card {
     border: black 1px solid;
-    width: 80%;
     display: flex;
     justify-content: space-between;
-    margin-top: 10%;
     padding: 20px;
     flex-flow: row wrap;
+    width: 50%;
+}
+
+@media screen and (max-width: 800px) {
+    .card {
+        max-width: 100%;
+        width: unset;
+    }
 }
 
 .input {
@@ -16,10 +30,18 @@
 }
 
 .input input {
-    width: 43px;
+    width: 52px;
 }
 
 .button {
     width: 100%;
-    margin: 20px  !important;
+    margin: 20px !important;
+}
+
+.sliderwrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-end;
+    width: 100%;
+    margin: 30px 10px 10px;
 }

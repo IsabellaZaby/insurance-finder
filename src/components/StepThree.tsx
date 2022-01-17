@@ -1,7 +1,7 @@
 import {FC} from "react";
 import {ArrowBack, Star, StarOutline} from "@mui/icons-material";
 import styles from './StepThree.module.css'
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {Button} from "@mui/material";
 
 const StepThree: FC = () => {
@@ -10,7 +10,7 @@ const StepThree: FC = () => {
 
     return (
         <div className={styles.wrapper}>
-            <a className={styles.back} onClick={() => navigate("/stepTwo")}><ArrowBack/> Zurück</a>
+            <Link className={styles.back} to="/stepTwo"><ArrowBack/> Zurück</Link>
             <h2 style={{margin: '10px 0 5px'}}>Versicherungsoption 1</h2>
             <h3 style={{margin: '0'}}>Anbieter</h3>
             <div>

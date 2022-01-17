@@ -8,6 +8,7 @@ import StepTwo from "./components/StepTwo";
 import StepThree from "./components/StepThree";
 import StepFour from "./components/StepFour";
 import StepFive from "./components/StepFive";
+import Privacy from "./components/Privacy";
 
 ReactDOM.render(
     <React.StrictMode>
@@ -18,6 +19,7 @@ ReactDOM.render(
                     <Route path="stepThree" element={<StepThree/>}/>
                     <Route path="stepFour" element={<StepFour/>}/>
                     <Route path="stepFive" element={<StepFive/>}/>
+                    <Route path="datenschutz" element={<Privacy/>}/>
                 </Route>
             </Routes>
         </Router>

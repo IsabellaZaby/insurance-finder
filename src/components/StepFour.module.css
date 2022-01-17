@@ -34,10 +34,19 @@
 }
 
 .button {
-    width: 100%;
+    width: 50%;
     align-self: center;
 }
 
+@media screen and (max-width: 800px) {
+    .button {
+        width: 100%;
+
+    }
+}
+
+
 .error {
-    color: red;
+    color: #d32f2f;
+
 }
