@@ -107,6 +107,9 @@ const StepOne: FC = () => {
                         <MenuItem value={"Mercedes"}>Mercedes</MenuItem>
                         <MenuItem value={"Audi"}>Audi</MenuItem>
                         <MenuItem value={"Mazda"}>Mazda</MenuItem>
+                        <MenuItem value={"BMW"}>BMW</MenuItem>
+                        <MenuItem value={"VW"}>VW</MenuItem>
+                        <MenuItem value={"Tesla"}>Tesla</MenuItem>
                     </Select>
                     {brand === '' && error && <FormHelperText>{CommonConstants.REQUIRED}</FormHelperText>}
                 </FormControl>
@@ -125,6 +128,16 @@ const StepOne: FC = () => {
                         <MenuItem value={"2022"}>2022</MenuItem>
                         <MenuItem value={"2021"}>2021</MenuItem>
                         <MenuItem value={"2020"}>2020</MenuItem>
+                        <MenuItem value={"2019"}>2019</MenuItem>
+                        <MenuItem value={"2018"}>2018</MenuItem>
+                        <MenuItem value={"2017"}>2017</MenuItem>
+                        <MenuItem value={"2016"}>2016</MenuItem>
+                        <MenuItem value={"2015"}>2015</MenuItem>
+                        <MenuItem value={"2014"}>2014</MenuItem>
+                        <MenuItem value={"2013"}>2013</MenuItem>
+                        <MenuItem value={"2012"}>2012</MenuItem>
+                        <MenuItem value={"2011"}>2011</MenuItem>
+                        <MenuItem value={"2010"}>2010</MenuItem>
                     </Select>
                     {year === '' && error && <FormHelperText>{CommonConstants.REQUIRED}</FormHelperText>}
                 </FormControl>
@@ -143,6 +156,13 @@ const StepOne: FC = () => {
                         <MenuItem value={"0"}>0</MenuItem>
                         <MenuItem value={"1"}>1</MenuItem>
                         <MenuItem value={"2"}>2</MenuItem>
+                        <MenuItem value={"3"}>3</MenuItem>
+                        <MenuItem value={"4"}>4</MenuItem>
+                        <MenuItem value={"5"}>5</MenuItem>
+                        <MenuItem value={"6"}>6</MenuItem>
+                        <MenuItem value={"7"}>7</MenuItem>
+                        <MenuItem value={"8"}>8</MenuItem>
+                        <MenuItem value={"9"}>9</MenuItem>
                     </Select>
                     {bonus === '' && error && <FormHelperText>{CommonConstants.REQUIRED}</FormHelperText>}
                 </FormControl>
