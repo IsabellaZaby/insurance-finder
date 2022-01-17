@@ -1,0 +1,63 @@
+.wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-flow: column nowrap;
+    margin: 20px;
+}
+
+.table {
+    display: table;
+    flex-flow: column nowrap;
+    border: 1px solid black;
+    /*width: 90%;*/
+    border-collapse: collapse;
+    overflow-y: scroll;
+}
+
+.row {
+    display: table-row;
+    /*flex-flow: row nowrap;*/
+    justify-content: space-around;
+}
+
+.hdrow {
+    font-weight: bold;
+}
+
+.cell {
+    display: table-cell;
+    padding: 7px;
+    border: 1px solid black;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 12px;
+}
+
+.header {
+    align-self: start;
+    margin: 0 0 10px 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+
+.back {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    align-self: start;
+    margin: 0;
+    font-weight: normal;
+}
+
+.back svg {
+    margin-right: 5px;
+}
+
+a:hover {
+    font-weight: bold;
+}

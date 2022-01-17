@@ -1,0 +1,25 @@
+.card {
+    border: black 1px solid;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10%;
+    padding: 20px;
+    flex-flow: row wrap;
+}
+
+.input {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.input input {
+    width: 43px;
+}
+
+.button {
+    width: 100%;
+    margin: 20px  !important;
+}
