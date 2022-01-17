@@ -10,6 +10,7 @@ const StepFour: FC = () => {
     const navigate = useNavigate();
     const [errors, setErrors] = useState(false);
     const [mailValidationError, setMailValidationError] = useState(false);
+    const [phoneValidationError, setPhoneValidationError] = useState(false);
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [phone, setPhone] = useState('');
@@ -25,6 +26,13 @@ const StepFour: FC = () => {
         const regex = new RegExp(
             "[a-zA-Z0-9_\.\+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-\\.]+");
         setMailValidationError(!regex.test(event.target.value));
+    };
+
+    const handlePhoneChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setPhone(event.target.value);
+        const regex = new RegExp(
+            "^\\d{10}$");
+        setPhoneValidationError(!regex.test(event.target.value));
     };
 
     const onButtonClick = () => {
@@ -97,12 +105,13 @@ const StepFour: FC = () => {
                     id="outlined-basic"
                     label="Telefonnummer"
                     variant="outlined"
-                    onChange={(e) => handleChange(e, setPhone)}
+                    onChange={handlePhoneChange}
                     value={phone}
-                    type={"number"}
-                    error={errors && (mail === '' && phone === '')}
+                    type="tel"
+                    error={errors && (mail === '' && phone === '') || phoneValidationError}
                     placeholder="0123456789"
                 />
+                {phoneValidationError && <FormHelperText>Keine gültige Telefonnummer.</FormHelperText>}
                 {errors && (mail === '' && phone === '') && <FormHelperText>Eines dieser Felder ist ein Pflichtfeld.</FormHelperText>}
             </FormControl>
             <p>Wir kontaktieren Sie gerne so schnell wie möglich mit mehr Informationen über ihre gewählte Versicherung.</p>
