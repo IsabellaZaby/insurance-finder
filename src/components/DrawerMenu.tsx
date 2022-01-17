@@ -2,7 +2,7 @@ import {Divider, Drawer, List, ListItem, ListItemIcon, ListItemText} from "@mui/
 import HomeIcon from '@mui/icons-material/Home';
 import React, {FC} from "react";
 import {Link, useLocation} from "react-router-dom";
-import {Policy} from "@mui/icons-material";
+import {Copyright, Policy} from "@mui/icons-material";
 
 interface DrawerMenu {
     open: boolean;
@@ -45,7 +45,7 @@ const DrawerMenu: FC<DrawerMenu> = ({open, setOpen}) => {
                 <Link to="/impressum" onClick={() => setOpen(false)}>
                     <ListItem selected={pathname === '/impressum'}>
                         <ListItemIcon>
-                            <Policy/>
+                            <Copyright/>
                         </ListItemIcon>
                         <ListItemText primary="Impressum"/>
                     </ListItem>
