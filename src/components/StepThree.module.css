@@ -33,8 +33,6 @@
 @media screen and (max-width: 800px) {
     .button {
         width: 90%;
-        position: fixed !important;
-        bottom: 25px;
     }
 }
 

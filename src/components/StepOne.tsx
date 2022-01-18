@@ -18,7 +18,7 @@ import {useNavigate} from "react-router-dom";
 import CommonConstants from "./CommonConstants";
 
 const valuetext = (value: number) => {
-    return `${value}°C`;
+    return `${value} €`;
 }
 
 const StepOne: FC = () => {
@@ -96,13 +96,12 @@ const StepOne: FC = () => {
                 <FormControl sx={{marginRight: '10px', maxWidth: '100%', width: '40%'}}>
                     <InputLabel id="demo-simple-select-label">Marke</InputLabel>
                     <Select
-                        labelId="demo-simple-select-label"
-                        id="demo-simple-select"
                         value={brand}
                         label="Marke"
                         onChange={e => handleChange(e, setBrand)}
                         error={brand === '' && error}
                         required={true}
+                        aria-label="Marke"
                     >
                         <MenuItem value={"Mercedes"}>Mercedes</MenuItem>
                         <MenuItem value={"Audi"}>Audi</MenuItem>
@@ -117,13 +116,12 @@ const StepOne: FC = () => {
                 <FormControl sx={{maxWidth: '100%', width: '40%'}}>
                     <InputLabel id="demo-simple-select-label">Jahr</InputLabel>
                     <Select
-                        labelId="demo-simple-select-label"
-                        id="demo-simple-select"
                         value={year}
                         label="Jahr"
                         onChange={e => handleChange(e, setYear)}
                         error={year === '' && error}
                         required={true}
+                        aria-label="Jahr"
                     >
                         <MenuItem value={"2022"}>2022</MenuItem>
                         <MenuItem value={"2021"}>2021</MenuItem>
@@ -145,8 +143,7 @@ const StepOne: FC = () => {
                 <FormControl sx={{maxWidth: '100%', width: '50%', marginTop: '20px'}}>
                     <InputLabel id="demo-simple-select-label">Bonusstufe</InputLabel>
                     <Select
-                        labelId="demo-simple-select-label"
-                        id="demo-simple-select"
+                        aria-label="Bonusstufe"
                         value={bonus}
                         label="Bonusstufe"
                         onChange={e => handleChange(e, setBonus)}
@@ -167,13 +164,14 @@ const StepOne: FC = () => {
                     {bonus === '' && error && <FormHelperText>{CommonConstants.REQUIRED}</FormHelperText>}
                 </FormControl>
                 <div className={styles.sliderwrapper}>
+                    <h3 style={{alignSelf: 'flex-start'}}>Preisrange in €</h3>
                     <ToggleButtonGroup
                         value={toggle}
                         exclusive
                         onChange={(e, newValue) => {
                             setToggle(newValue)
                         }}
-                        aria-label="Preisrange für Monat oder Jahr auswählen"
+                        aria-label="Preisrange in Monat oder Jahr auswählen"
                         sx={{height: 30}}
                     >
                         <ToggleButton value="Monat" aria-label="Monat">
@@ -185,7 +183,7 @@ const StepOne: FC = () => {
                     </ToggleButtonGroup>
                     <Box sx={{width: '100%'}}>
                         <Slider
-                            getAriaLabel={() => 'Temperature range'}
+                            getAriaLabel={() => "Preisrange"}
                             value={sliderValue}
                             onChange={handleSliderChange}
                             valueLabelDisplay="auto"
@@ -205,7 +203,7 @@ const StepOne: FC = () => {
                                 min: 0,
                                 max: 100,
                                 type: 'number',
-                                'aria-labelledby': 'input-slider',
+                                'aria-labelledby': 'Minimum Preis Input',
                             }}
                             onSubmit={handleBlur}
                         />
@@ -219,7 +217,7 @@ const StepOne: FC = () => {
                                 min: 0,
                                 max: 100,
                                 type: 'number',
-                                'aria-labelledby': 'input-slider',
+                                'aria-labelledby': 'Maximum Preis Input',
                             }}
                             onSubmit={handleSecondBlur}
                         />

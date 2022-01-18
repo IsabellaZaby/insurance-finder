@@ -10,21 +10,31 @@ import StepFour from "./components/StepFour";
 import StepFive from "./components/StepFive";
 import Privacy from "./components/Privacy";
 import Impressum from "./components/Impressum";
+import {initBreakpoints} from "react-match-breakpoints";
+
+const breakpointsConfig = {
+    mobile: 'screen and (max-width: 767px)',
+    tablet: 'screen and (min-width: 768px) and (max-width: 1024px)'
+}
+
+const BreakpointsProvider = initBreakpoints(breakpointsConfig);
 
 ReactDOM.render(
     <React.StrictMode>
-        <Router>
-            <Routes>
-                <Route path="/" element={<App/>}>
-                    <Route path="stepTwo" element={<StepTwo/>}/>
-                    <Route path="stepThree" element={<StepThree/>}/>
-                    <Route path="stepFour" element={<StepFour/>}/>
-                    <Route path="stepFive" element={<StepFive/>}/>
-                    <Route path="datenschutz" element={<Privacy/>}/>
-                    <Route path="impressum" element={<Impressum/>}/>
-                </Route>
-            </Routes>
-        </Router>
+        <BreakpointsProvider>
+            <Router>
+                <Routes>
+                    <Route path="/" element={<App/>}>
+                        <Route path="stepTwo" element={<StepTwo/>}/>
+                        <Route path="stepThree" element={<StepThree/>}/>
+                        <Route path="stepFour" element={<StepFour/>}/>
+                        <Route path="stepFive" element={<StepFive/>}/>
+                        <Route path="datenschutz" element={<Privacy/>}/>
+                        <Route path="impressum" element={<Impressum/>}/>
+                    </Route>
+                </Routes>
+            </Router>
+        </BreakpointsProvider>
     </React.StrictMode>,
     document.getElementById("root")
 );

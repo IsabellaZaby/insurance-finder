@@ -53,9 +53,15 @@ const StepFour: FC = () => {
                     name="radio-buttons-group"
                     className={styles.radiobuttons}
                 >
-                    <FormControlLabel value="Frau" control={<Radio/>} label="Frau"/>
-                    <FormControlLabel value="Herr" control={<Radio/>} label="Herr"/>
-                    <FormControlLabel value="Divers" control={<Radio/>} label="Divers"/>
+                    <FormControlLabel value="Frau" control={<Radio inputProps={{
+                        'aria-label': 'Frau',
+                    }}/>}  label="Frau"/>
+                    <FormControlLabel value="Herr" control={<Radio inputProps={{
+                        'aria-label': 'Herr',
+                    }}/>}  label="Herr"/>
+                    <FormControlLabel value="Divers" control={<Radio inputProps={{
+                        'aria-label': 'Divers',
+                    }}/>}  label="Divers"/>
                 </RadioGroup>
             </FormControl>
             <div className={styles.formelement}>
@@ -69,6 +75,7 @@ const StepFour: FC = () => {
                     error={errors && firstName === ''}
                     required={true}
                     placeholder="Erika"
+                    aria-label="Vorname"
                 />
                 {errors && firstName === '' && <FormHelperText>{CommonConstants.REQUIRED}</FormHelperText>}
             </div>
@@ -83,6 +90,7 @@ const StepFour: FC = () => {
                     error={errors && lastName === ''}
                     required={true}
                     placeholder="Musterperson"
+                    aria-label="Nachname"
                 />
                 {errors && lastName === '' && <FormHelperText>{CommonConstants.REQUIRED}</FormHelperText>}
             </div>
@@ -97,6 +105,7 @@ const StepFour: FC = () => {
                     value={mail}
                     error={errors && (mail === '' && phone === '') || mailValidationError}
                     placeholder="erika.musterperson@email.at"
+                    aria-label="Email"
                 />
                 {mailValidationError && <FormHelperText>Keine gültige Email-Adresse.</FormHelperText>}
                 <h4>UND / ODER</h4>
@@ -110,6 +119,7 @@ const StepFour: FC = () => {
                     type="tel"
                     error={errors && (mail === '' && phone === '') || phoneValidationError}
                     placeholder="0123456789"
+                    aria-label="Telefonnummer"
                 />
                 {phoneValidationError && <FormHelperText>Keine gültige Telefonnummer.</FormHelperText>}
                 {errors && (mail === '' && phone === '') && <FormHelperText>Eines dieser Felder ist ein Pflichtfeld.</FormHelperText>}
