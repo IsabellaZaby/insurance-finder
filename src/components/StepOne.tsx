@@ -38,7 +38,6 @@ const StepOne: FC = () => {
     };
 
     const handleSliderChange = (event: Event, newValue: number | number[]) => {
-        console.log(newValue);
         setSliderValue(newValue as number[]);
         if (typeof newValue !== 'number') {
             setInputOne(newValue[0]);
@@ -164,14 +163,14 @@ const StepOne: FC = () => {
                     {bonus === '' && error && <FormHelperText>{CommonConstants.REQUIRED}</FormHelperText>}
                 </FormControl>
                 <div className={styles.sliderwrapper}>
-                    <h3 style={{alignSelf: 'flex-start'}}>Preisrange in €</h3>
+                    <h3 style={{alignSelf: 'flex-start'}}>Preisrahmen in €</h3>
                     <ToggleButtonGroup
                         value={toggle}
                         exclusive
                         onChange={(e, newValue) => {
                             setToggle(newValue)
                         }}
-                        aria-label="Preisrange in Monat oder Jahr auswählen"
+                        aria-label="Preisrahmen in Monat oder Jahr auswählen"
                         sx={{height: 30}}
                     >
                         <ToggleButton value="Monat" aria-label="Monat">
@@ -183,7 +182,7 @@ const StepOne: FC = () => {
                     </ToggleButtonGroup>
                     <Box sx={{width: '100%'}}>
                         <Slider
-                            getAriaLabel={() => "Preisrange"}
+                            getAriaLabel={() => "Preisrahmen"}
                             value={sliderValue}
                             onChange={handleSliderChange}
                             valueLabelDisplay="auto"
